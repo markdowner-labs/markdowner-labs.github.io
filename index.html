@@ -1,1 +1,317 @@
-markdowner.github.io
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>💰 Simulador de Aportes Periódicos | Periodic Contributions Simulator</title>
+    <meta name="title" content="Simulador de Aportes Periódicos | Periodic Contributions Simulator">
+    <meta name="description" content="Simulador gratuito de aportes periódicos e investimentos recorrentes. Calcule rentabilidade, DCA (Dollar Cost Average), preço médio e estratégias de investimento mensal. Free periodic investment calculator with DCA strategy.">
+    <meta name="keywords" content="simulador aportes, investimentos periódicos, DCA, dollar cost average, preço médio, aportes mensais, simulador investimentos, portfolio, rentabilidade, calculadora investimentos, estratégia investimento, aportes recorrentes, periodic contributions, investment calculator, DCA calculator, average price, monthly investments, portfolio simulator, profitability calculator, investment strategy, recurring investments">
+    <meta name="author" content="Investment Tools">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese, English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Simulador de Aportes Periódicos | Periodic Contributions Simulator">
+    <meta property="og:description" content="Simulador gratuito de aportes periódicos com estratégia DCA. Calcule rentabilidade, preço médio e analise seu portfolio de investimentos. Free periodic investment calculator with Dollar Cost Average strategy.">
+    <meta property="og:image" content="https://yourdomain.com/preview.png">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="Simulador de Aportes Periódicos | Periodic Contributions Simulator">
+    <meta property="twitter:description" content="Simulador gratuito de aportes periódicos com estratégia DCA. Calcule rentabilidade, preço médio e analise seu portfolio de investimentos.">
+    <meta property="twitter:image" content="https://yourdomain.com/preview.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/">
+
+    <!-- Additional SEO -->
+    <meta name="geo.region" content="BR">
+    <meta name="geo.placename" content="Brazil">
+    <meta name="category" content="Finance, Investment, Calculator, Tools">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+
+    <!-- PWA -->
+    <meta name="theme-color" content="#1976D2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Aportes Periódicos">
+    <meta name="application-name" content="Aportes Periódicos">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Structured Data (JSON-LD) for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulador de Aportes Periódicos",
+      "alternateName": "Periodic Contributions Simulator",
+      "url": "https://yourdomain.com/",
+      "description": "Simulador gratuito de aportes periódicos e investimentos recorrentes com estratégia DCA (Dollar Cost Average). Calcule rentabilidade, preço médio e analise seu portfolio de investimentos.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+      },
+      "featureList": [
+        "Simulação de aportes periódicos",
+        "Estratégia DCA (Dollar Cost Average)",
+        "Cálculo de preço médio",
+        "Análise de rentabilidade",
+        "Exportação de dados (CSV, Markdown)",
+        "Importação de dados",
+        "Armazenamento local",
+        "Interface multilíngue (PT/EN)"
+      ],
+      "screenshot": "https://yourdomain.com/screenshot.png",
+      "inLanguage": ["pt-BR", "en-US"],
+      "potentialAction": {
+        "@type": "UseAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://yourdomain.com/",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        }
+      }
+    }
+    </script>
+
+    <!-- Additional Structured Data for Finance Calculator -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "DCA Investment Calculator",
+      "applicationCategory": "FinanceApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      },
+      "description": "Free Dollar Cost Average (DCA) calculator for periodic investments. Calculate average price, profitability and analyze your investment portfolio strategy."
+    }
+    </script>
+</head>
+<body>
+    <!-- App Bar -->
+    <div class="app-bar">
+        <h1 id="app-title">💰 Simulador de Aportes Periódicos</h1>
+        <div class="app-bar-actions">
+            <button class="icon-button" onclick="app.showAdjustInitialDialog()" id="btn-adjust-initial" title="" aria-label="Ajustar Aporte Inicial">
+                💰
+            </button>
+            <button class="icon-button" onclick="app.showAdjustPriceDialog()" id="btn-adjust-price" title="" aria-label="Ajustar Cotação Inicial">
+                📊
+            </button>
+            <button class="icon-button" onclick="app.importData()" id="btn-import" title="" aria-label="Importar Dados">
+                📥
+            </button>
+            <button class="icon-button" onclick="app.showExportDialog()" id="btn-export" title="" aria-label="Exportar Dados">
+                💾
+            </button>
+        </div>
+    </div>
+
+    <!-- Hidden file input for import -->
+    <input type="file" id="file-import" class="file-input" accept=".md,.markdown,.csv,text/markdown,text/csv" onchange="app.handleFileImport(event)" aria-label="Importar arquivo">
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Initial Configuration Screen -->
+        <div id="initial-screen">
+            <div class="card">
+                <div class="card-header" id="initial-card-header">
+                    ⚙️ Configuração Inicial
+                </div>
+                <div class="card-content">
+                    <form id="initial-form" onsubmit="app.initializeSimulation(event)">
+                        <div class="input-group">
+                            <label for="initial-investment" id="label-initial-investment">💰 Aporte Inicial (investimento de entrada)</label>
+                            <input type="number" id="initial-investment" placeholder="Ex: 1000" min="1" step="1" required aria-describedby="helper-initial-investment">
+                            <div class="input-helper" id="helper-initial-investment">Digite um valor inteiro positivo maior que zero</div>
+                        </div>
+                        <div class="input-group">
+                            <label for="initial-price" id="label-initial-price">📊 Cotação Inicial do Ativo (preço por cota)</label>
+                            <input type="number" id="initial-price" placeholder="Ex: 10.50" min="0.01" step="0.01" required aria-describedby="helper-initial-price">
+                            <div class="input-helper" id="helper-initial-price">Digite um valor decimal positivo</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="btn-start-simulation">
+                            ✅ Iniciar Simulação
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Screen -->
+        <div id="main-screen" class="hidden">
+            <div id="preview-content">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📊</div>
+                    <div class="empty-state-text" id="empty-state-text">Adicione cenários para visualizar a análise do portfolio</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAB Container -->
+    <div class="fab-container" id="fab-container">
+        <button class="fab fab-accent" onclick="app.showAddScenarioDialog()" id="fab-add" title="" aria-label="Adicionar Cenário">
+            ➕
+        </button>
+        <button class="fab fab-danger" onclick="app.resetSimulation()" id="fab-reset" title="" aria-label="Reiniciar Simulação">
+            🧹
+        </button>
+    </div>
+
+    <!-- Export Dialog -->
+    <div class="dialog-overlay" id="dialog-export" role="dialog" aria-modal="true" aria-labelledby="dialog-export-title">
+        <div class="dialog">
+            <div class="dialog-header">
+                <h2 class="dialog-title" id="dialog-export-title">💾 Escolha o Formato de Exportação</h2>
+            </div>
+            <div class="dialog-content">
+                <div class="export-options">
+                    <div class="export-option" onclick="app.exportAsExcel()" role="button" tabindex="0">
+                        <div class="export-option-icon">📊</div>
+                        <div class="export-option-title" id="export-csv-title">Excel (CSV)</div>
+                        <div class="export-option-desc" id="export-csv-desc">Compatível com Excel, Google Sheets e outras planilhas</div>
+                    </div>
+                    <div class="export-option" onclick="app.exportAsMarkdown()" role="button" tabindex="0">
+                        <div class="export-option-icon">📝</div>
+                        <div class="export-option-title" id="export-md-title">Markdown</div>
+                        <div class="export-option-desc" id="export-md-desc">Formato de texto para documentação e relatórios</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-actions">
+                <button type="button" class="btn btn-secondary" onclick="app.closeDialog('dialog-export')" id="btn-cancel-export">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Scenario Dialog -->
+    <div class="dialog-overlay" id="dialog-add-scenario" role="dialog" aria-modal="true" aria-labelledby="dialog-add-scenario-title">
+        <div class="dialog">
+            <div class="dialog-header">
+                <h2 class="dialog-title" id="dialog-add-scenario-title">➕ Adicionar Cenário de Aportes</h2>
+            </div>
+            <form id="form-add-scenario" onsubmit="app.submitAddScenario(event)">
+                <div class="dialog-content">
+                    <div class="input-group">
+                        <label for="scenario-periods" id="label-scenario-periods">📅 Quantos períodos (meses) deseja simular?</label>
+                        <input type="number" id="scenario-periods" placeholder="Ex: 12" min="1" step="1" required aria-describedby="helper-scenario-periods">
+                        <div class="input-helper" id="helper-scenario-periods">Digite um número inteiro positivo</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="scenario-contribution" id="label-scenario-contribution">💵 Aporte Recorrente Mensal</label>
+                        <input type="number" id="scenario-contribution" placeholder="Ex: 500" step="0.01" aria-describedby="helper-scenario-contribution">
+                        <div class="input-helper" id="helper-scenario-contribution">Deixe em branco para não realizar aportes neste período</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="scenario-variation" id="label-scenario-variation">📈 Variação da Cotação por Período</label>
+                        <input type="number" id="scenario-variation" placeholder="Ex: 5.50 ou -3.20" step="0.01" required aria-describedby="helper-scenario-variation">
+                        <div class="input-helper" id="helper-scenario-variation">Pode ser um valor positivo ou negativo</div>
+                    </div>
+                </div>
+                <div class="dialog-actions">
+                    <button type="button" class="btn btn-secondary" onclick="app.closeDialog('dialog-add-scenario')" id="btn-cancel-scenario">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="btn-submit-scenario">
+                        ✅ Adicionar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Adjust Initial Investment Dialog -->
+    <div class="dialog-overlay" id="dialog-adjust-initial" role="dialog" aria-modal="true" aria-labelledby="dialog-adjust-initial-title">
+        <div class="dialog">
+            <div class="dialog-header">
+                <h2 class="dialog-title" id="dialog-adjust-initial-title">💰 Ajustar Aporte Inicial</h2>
+            </div>
+            <form id="form-adjust-initial" onsubmit="app.submitAdjustInitial(event)">
+                <div class="dialog-content">
+                    <div class="input-group">
+                        <label for="adjust-initial-value" id="label-adjust-initial">💰 Novo Aporte Inicial</label>
+                        <input type="number" id="adjust-initial-value" placeholder="Ex: 1500" min="1" step="1" required aria-describedby="adjust-initial-current">
+                        <div class="input-helper" id="adjust-initial-current">Valor atual: R$ 0,00</div>
+                    </div>
+                </div>
+                <div class="dialog-actions">
+                    <button type="button" class="btn btn-secondary" onclick="app.closeDialog('dialog-adjust-initial')" id="btn-cancel-adjust-initial">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="btn-submit-adjust-initial">
+                        ✅ Atualizar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Adjust Price Dialog -->
+    <div class="dialog-overlay" id="dialog-adjust-price" role="dialog" aria-modal="true" aria-labelledby="dialog-adjust-price-title">
+        <div class="dialog">
+            <div class="dialog-header">
+                <h2 class="dialog-title" id="dialog-adjust-price-title">📊 Ajustar Cotação Inicial</h2>
+            </div>
+            <form id="form-adjust-price" onsubmit="app.submitAdjustPrice(event)">
+                <div class="dialog-content">
+                    <div class="input-group">
+                        <label for="adjust-price-value" id="label-adjust-price">📊 Nova Cotação Inicial</label>
+                        <input type="number" id="adjust-price-value" placeholder="Ex: 12.75" min="0.01" step="0.01" required aria-describedby="adjust-price-current">
+                        <div class="input-helper" id="adjust-price-current">Cotação atual: R$ 0,00</div>
+                    </div>
+                </div>
+                <div class="dialog-actions">
+                    <button type="button" class="btn btn-secondary" onclick="app.closeDialog('dialog-adjust-price')" id="btn-cancel-adjust-price">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="btn-submit-adjust-price">
+                        ✅ Atualizar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Snackbar -->
+    <div id="snackbar" class="snackbar" role="alert" aria-live="polite"></div>
+
+    <!-- Scripts -->
+    <script src="js/i18n.js"></script>
+    <script src="js/formatter.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

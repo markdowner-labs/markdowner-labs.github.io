@@ -1,0 +1,20 @@
+{
+  "name": "Simulador de Aportes Periódicos",
+  "short_name": "Aportes",
+  "description": "Simulador gratuito de aportes periódicos e investimentos recorrentes com estratégia DCA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#1976D2",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity", "utilities"],
+  "lang": "pt-BR"
+}

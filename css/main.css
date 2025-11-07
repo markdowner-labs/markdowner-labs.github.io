@@ -1,0 +1,54 @@
+/**
+ * Main Styles
+ * Base styles and CSS variables
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1976D2;
+    --primary-dark: #1565C0;
+    --primary-light: #42A5F5;
+    --accent-color: #FF9800;
+    --accent-secondary: #4CAF50;
+    --accent-tertiary: #F44336;
+    --background: #FAFAFA;
+    --surface: #FFFFFF;
+    --error: #F44336;
+    --success: #4CAF50;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --divider: #BDBDBD;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    padding-bottom: 80px;
+}
+
+/* Hidden */
+.hidden {
+    display: none !important;
+}
+
+/* Hidden file input */
+.file-input {
+    display: none;
+}
